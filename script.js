@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('touchend', () => {
       document.activeElement.blur();
     });
+
+
   });
 });
 

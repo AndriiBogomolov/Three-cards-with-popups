@@ -32,9 +32,7 @@
     margin-top: 60px;
     justify-content: center;
     align-items: center;
-    gap: 60px;
     flex-flow: column;
-    gap: 32px;
   }
 
   /* мобільний блок */
