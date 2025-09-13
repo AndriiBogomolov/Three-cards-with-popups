@@ -1,0 +1,295 @@
+@media screen and (max-width: 767px) {
+  body {
+    margin-right: auto;
+    margin-left: auto;
+    font-family: 'Euclid Circular B';
+    font-size: 1rem;
+    line-height: 140%;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+  }
+
+  /* контейнер для всього блоку */
+
+  .mob-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    aspect-ratio: auto;
+    padding-bottom: 140px;
+    flex-flow: column;
+    justify-content: center;
+  }
+
+  /* мобільний контейнер для блоків */
+
+  .bloks-mob-container {
+    width: 100%;
+    display: flex;
+    margin-top: 60px;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-flow: column;
+    gap: 32px;
+  }
+
+  /* мобільний блок */
+
+  .mob-popup-block {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 390px;
+    max-width: 282px;
+    border-radius: 30px;
+    background-color: white;
+  }
+
+  /* мобільний блок з картинкою */
+
+  .image-mob-block {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    background-position: center;
+    background-size: cover;
+    transition: opacity 500ms ease-in-out;
+    background-attachment: scroll;
+    opacity: 1;
+  }
+
+  /* Псевдоелемент для накладення кольорового фільтра */
+
+  .image-mob-block::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 64, 255, 0.5);
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+    pointer-events: none;
+  }
+
+  /* Показати фільтр при ховері */
+
+  .image-mob-block:hover::after {
+    opacity: 1;
+  }
+
+  /* Заголовок блоку */
+
+  .mob-popup-block.active-bg {
+    opacity: 1;
+    background-color: #002bab;
+    transition: opacity 500ms ease-in-out, background-color 500ms ease-in-out;
+  }
+
+  .mob-popup-heading {
+    margin: 15px 20px 0px;
+    color: #002bab;
+    font-size: 23px;
+    line-height: 120%;
+    font-style: normal;
+    font-weight: 500;
+    text-align: left;
+    white-space: normal;
+    transition: color 500ms ease-in-out;
+  }
+
+  /* Зміна кольору тексту при активному блоці */
+
+  .mob-popup-block.active-bg .mob-popup-heading {
+    color: white;
+  }
+
+  /* Псевдоелемент для відступу в кінці заголовка */
+
+  .mob-popup-heading::after {
+    content: '\00a0';
+    display: inline;
+  }
+
+  /* Мобільні кнопки */
+
+  .mob-card-btn1,
+  .mob-card-btn2,
+  .mob-card-btn3 {
+    padding: 5px 0px 16px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .round-btn-mob {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 1.7px solid #002bab;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px 0px 10px 0px;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease;
+  }
+
+  /* Плюс/хрестик через ::before і ::after */
+
+  .round-btn-mob::before,
+  .round-btn-mob::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 1.5px;
+    border-radius: 25px;
+    background-color: #002bab;
+    transform-origin: center;
+    transform: translate(-50%, -50%);
+    transition: transform 0.4s ease, background-color 0.4s ease;
+  }
+
+  /* Вертикальна лінія */
+  /* Горизонтальна лінія */
+
+  .round-btn-mob::before {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  .round-btn-mob::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  /* Зміна кольору ліній при активному стані */
+  /* Поворот кнопки на 45 градусів при активному стані */
+
+  .round-btn-mob.active {
+    transform: rotate(-45deg);
+    background-color: white;
+  }
+
+  .round-btn-mob.active::before,
+  .round-btn-mob.active::after {
+    background-color: #002bab;
+  }
+
+  /* Мобільний popup  */
+  .popup1-mob,
+  .popup2-mob,
+  .popup3-mob {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0px 20px 20px;
+    background-color: #002bab;
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .popup1-mob.open,
+  .popup2-mob.open,
+  .popup3-mob.open {
+    max-height: 600px; /* досить велике значення, щоб вліз контент */
+    opacity: 1;
+    padding: 20px;
+    pointer-events: auto;
+  }
+
+  /* Вміст popup */
+
+  .wrapper-popup1,
+  .wrapper-popup2,
+  .wrapper-popup3 {
+    padding: 60px 120px;
+    display: flex;
+    flex-flow: column;
+    flex: 0 1 auto;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Вміст popup */
+
+  .content1-mob-popup,
+  .content2-mob-popup,
+  .content3-mob-popup {
+    width: 100%;
+  }
+
+  .heading1-mob-popup,
+  .heading2-mob-popup,
+  .heading3-mob-popup {
+    min-width: 405px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 1.625rem;
+    line-height: 33px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .text1-mob-popup,
+  .text2-mob-popup,
+  .text3-mob-popup {
+    min-width: 518px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 1rem;
+    line-height: 150%;
+    color: white;
+  }
+
+  /* Кнопка в мобільному popup */
+
+  .btn-styles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    width: 159px;
+    height: 48px;
+    margin: 0px;
+    border: 1.5px solid #fff;
+    border-radius: 30px;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+
+  /* Ховер і активний стан кнопки */
+
+  .btn-styles:hover {
+    background-color: #007aff;
+    border: 1.5px solid #007aff;
+  }
+
+  /* Активний стан кнопки */
+
+  .btn-styles:active {
+    background-color: #002bab;
+  }
+}
