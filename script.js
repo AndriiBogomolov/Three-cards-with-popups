@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const buttons = document.querySelectorAll('.round-btn-mob');
-  const popups = document.querySelectorAll(
-    '.popup1-mob, .popup2-mob, .popup3-mob'
-  );
+  const popups = document.querySelectorAll('.popup-mob');
   const blocks = document.querySelectorAll('.mob-popup-block');
 
   buttons.forEach((btn, index) => {
@@ -34,9 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
     //       btn.blur();
     //     });
     //   });
-    document.addEventListener('touchend', () => {
+    // Забрати фокус після touch
+  document.addEventListener('touchend', () => {
+    if (document.activeElement instanceof HTMLElement) {
       document.activeElement.blur();
-    });
+    }
+  });
 
 
   });

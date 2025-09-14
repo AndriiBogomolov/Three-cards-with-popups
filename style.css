@@ -103,7 +103,7 @@
   }
 
   .mob-popup-heading {
-    margin: 15px 20px 0px;
+    margin: 15px 15px 0px;
     color: #002bab;
     font-size: 23px;
     line-height: 120%;
@@ -129,9 +129,7 @@
 
   /* Мобільні кнопки */
 
-  .mob-card-btn1,
-  .mob-card-btn2,
-  .mob-card-btn3 {
+  .mob-card-btn {
     padding: 5px 0px 16px 0px;
     width: 100%;
     display: flex;
@@ -193,9 +191,8 @@
   }
 
   /* Мобільний popup  */
-  .popup1-mob,
-  .popup2-mob,
-  .popup3-mob {
+
+  .popup-mob {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -212,10 +209,8 @@
     transition: all 0.5s ease-in-out;
   }
 
-  .popup1-mob.open,
-  .popup2-mob.open,
-  .popup3-mob.open {
-    max-height: 600px; /* досить велике значення, щоб вліз контент */
+  .popup-mob.open {
+    max-height: 495px; /* досить велике значення, щоб вліз контент */
     opacity: 1;
     padding: 20px;
     pointer-events: auto;
@@ -223,10 +218,8 @@
 
   /* Вміст popup */
 
-  .wrapper-popup1,
-  .wrapper-popup2,
-  .wrapper-popup3 {
-    padding: 60px 120px;
+  .wrapper-popup {
+    padding: 3.75rem 7.5rem;
     display: flex;
     flex-flow: column;
     flex: 0 1 auto;
@@ -237,16 +230,12 @@
 
   /* Вміст popup */
 
-  .content1-mob-popup,
-  .content2-mob-popup,
-  .content3-mob-popup {
+  .content-mob-popup {
     width: 100%;
+    max-width: 290px;
   }
 
-  .heading1-mob-popup,
-  .heading2-mob-popup,
-  .heading3-mob-popup {
-    min-width: 405px;
+  .heading-mob-popup {
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: 1.625rem;
@@ -255,10 +244,7 @@
     color: white;
   }
 
-  .text1-mob-popup,
-  .text2-mob-popup,
-  .text3-mob-popup {
-    min-width: 518px;
+  .text-mob-popup { 
     margin-top: 24px;
     margin-bottom: 24px;
     font-size: 1rem;
@@ -272,11 +258,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 12px 24px;
-    width: 159px;
-    height: 48px;
+    width: 10rem;
+    height: 3rem;
     margin: 0px;
-    border: 1.5px solid #fff;
+    border: 1.5px solid white;
     border-radius: 30px;
     background-color: transparent;
     cursor: pointer;
