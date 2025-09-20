@@ -219,7 +219,7 @@
   /* Вміст popup */
 
   .wrapper-popup {
-    padding: 3.75rem 7.5rem;
+    padding: 4rem 2rem;
     display: flex;
     flex-flow: column;
     flex: 0 1 auto;

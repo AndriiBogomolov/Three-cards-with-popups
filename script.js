@@ -1,17 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const buttons = document.querySelectorAll('.round-btn-mob');
-  const popups = document.querySelectorAll('.popup-mob');
+  const mobButtons = document.querySelectorAll('.round-btn-mob');
+  const mobPopups = document.querySelectorAll('.popup-mob');
   const blocks = document.querySelectorAll('.mob-popup-block');
 
-  buttons.forEach((btn, index) => {
+  mobButtons.forEach((btn, index) => {
     btn.addEventListener('click', () => {
-      const popup = popups[index];
+      const popup = mobPopups[index];
       const block = blocks[index];
       const isActive = btn.classList.contains('active');
 
       // Закриваємо всі попапи і знімаємо стани
-      buttons.forEach((b) => b.classList.remove('active'));
-      popups.forEach((p) => p.classList.remove('open'));
+      mobButtons.forEach((b) => b.classList.remove('active'));
+      mobPopups.forEach((p) => p.classList.remove('open'));
       blocks.forEach((bl) => bl.classList.remove('active-bg'));
 
       // Якщо кнопка не була активною — відкриваємо
